@@ -1,0 +1,177 @@
+.home{
+    background: no-repeat center/cover;
+    padding: 20px 0;
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+}
+.home::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000000 no-repeat center/cover;
+    opacity: 0.6;
+    z-index: -1;
+}
+.info{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+}
+.info .hotel{
+    width: 100%;
+    text-align: center;
+    margin: 5% 0;
+    position: relative;
+}
+.info .hotel .connection{
+    margin-top: 5%;
+}
+.info .hotel .connection span,
+.info .hotel .connection h1{
+    display: block;
+    color: #fff;
+    font: normal normal normal 16px/18px Noto Sans CJK TC;
+    letter-spacing: 0px;
+    line-height: 1.5;
+}
+.info .hotel .connection h1{
+    padding-bottom: 20px;
+}
+.info .hotel .icon .bannerDot{
+    position: relative;
+}
+.info .hotel .icon .bannerDot .dot{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 15px 10px;
+    vertical-align: middle;
+}
+.info .hotel .icon .bannerDot .dot.active{
+    background-color: #fff;
+}
+.info .room{
+    margin: 0 auto;
+    width: 70%;
+    font-size: 0;
+}
+.info .room h1{
+    display: none;
+}
+.info .room .roompic{
+    display: block;
+    margin: 0 auto;
+    width: 250px;
+    height: 200px;
+    background: no-repeat center/cover;
+    position: relative;
+    cursor: pointer;
+}
+.info .room .roompic::before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color:#38470B;
+    opacity: 0;
+    transition: .3s;
+}
+.info .room .roompic.active::before{
+    opacity: .6;
+}
+.info .room .roompic .roomtype{
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    opacity: 0;
+    transition: .3s;
+}
+.info .room .roompic.active .roomtype{
+    opacity: 1;
+}
+.info .room .roompic + .roompic{
+    margin-top: 5px;
+}
+.info .room .roompic img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (min-width: 768px){
+    .info .hotel{
+        margin: 5% 0;
+    }
+    .info .hotel .icon, .info .hotel .connection{
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 30px;
+    }
+    .info .room .roompic{
+        display: inline-block;
+        margin: 0 auto;
+        width: 50%;
+    }
+    .info .room .roompic + .roompic{
+        margin-top: 0px;
+    }
+}
+@media screen and (min-width: 1024px){
+    .home{
+        background-color: #666;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .info{
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .info .hotel{
+        width: 30%;
+        text-align: left;
+        margin: 0;
+        position: relative;
+    }
+    .info .hotel .connection{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .info .room{
+        margin: 0 auto;
+        width: 60%;
+        font-size: 0;
+    }
+    .info .room .roompic{
+        width: 33.333333%;
+        max-width: 275px;
+        height: 275px;
+    }
+    .info .hotel .icon .bannerDot{
+        position: absolute;
+        top: 115%;
+        left: 40px;
+    }
+}

@@ -1,0 +1,175 @@
+.room{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.info, .banner{
+    width: 100%;
+    color: #38470B;
+    font-family: Noto Sans CJK TC;
+}
+.info{
+    padding: 20px 20px 10px;
+    box-sizing: border-box;
+}
+.info header{
+    margin-bottom: 30px;
+}
+.info header h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.info header span{
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+.info .detailInfo{
+    font-size: 14px;
+}
+.info .price, .info .roomTime{
+    display: block;
+    margin-bottom: 15px;
+}
+.info ul{
+    position: relative;
+    margin: 30px 0px 30px 15px;
+}
+.info li{
+    line-height: 1.3;
+}
+.info li::before{
+    content: '・';
+    display: inline-block;
+    width: 5px;
+    position: absolute;
+    left: -15px;
+}
+.info li + li{
+    margin-top: 10px;
+}
+.info .roomEquip{
+    width: 100%;
+}
+.banner{
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+} 
+.banner .seeOtherPage{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 5;
+}
+.banner .seeOtherPage a{
+    font: normal normal normal 14px/16px Noto Sans CJK TC;
+    color: #38470B;
+    padding-left: 30px;
+    box-sizing: border-box;
+}
+.banner .seeOtherPage a::before, .banner .seeOtherPage a::after{
+    content: '';
+    display: block;
+    border: 1px solid #38470B;
+    width: 13px;
+    position: absolute;
+    left: 0px;
+}
+.banner .seeOtherPage a::before{
+    transform: rotate(35deg);
+    top: 12px;
+}
+.banner .seeOtherPage a::after{
+    transform: rotate(325deg);
+    top: 3px;
+}
+.banner .bookInfo{
+    position: absolute;
+    bottom: 40px;
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+}
+.bookInfo p{
+    font-size: 24px;
+    font-family: Noto Sans CJK TC;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px #000, 2px 2px 3px #000, 2px 2px 3px #000;
+    font-weight: 500;
+    /* -webkit-text-stroke: 1px #000; */
+}
+.bookInfo p span{
+    font-size: 18px;
+}
+.bookInfo .bookingBtn{
+    padding: 10px 40px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #38470B;
+    outline: none;
+    border: #38470B;
+    line-height: 1;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.bookInfo .dot .item{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #38470B;
+    border-radius: 50%;
+}
+.bookInfo .dot .active{
+    background-color:  #38470B;
+}
+.bookInfo .dot .item + .item{
+    margin-left: 10px;
+}
+@media screen and (min-width: 1024px){
+    .room{
+        flex-direction: row;
+    }
+    .info{
+        margin-left: 50%;
+        width: 50%;
+    }
+    .banner{
+        width: 50%;
+        position: fixed;
+        height: 100vh;
+    }
+}
+@media screen and (min-width: 1200px){
+    .room{
+        flex-direction: row;
+    }
+    .info{
+        margin-left: 40%;
+        width: 60%;
+    }
+    .banner{
+        width: 40%;
+        position: fixed;
+        height: 100vh;
+    }
+    .info header:before{
+        content: '';
+        display: inline-block;
+        clear: both;
+    }
+    .info header h1{
+        float: left;
+    }
+    .info header span{
+        padding-top: 10px;
+        float: right;
+    }
+    /* {
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 1.5;
+    } */
+}

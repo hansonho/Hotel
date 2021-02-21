@@ -1,0 +1,101 @@
+.calendar{
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+.month{
+    width: 100%;
+    border: 1px solid #38470B;
+    display: none;
+    min-height: 250px;
+    box-sizing: border-box;
+}
+.month.active{
+    display: block;
+}
+.month span{
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    color: #38470B;
+    font-size: 16px;
+    font-weight: 700;
+}
+.month table{
+    width: 100%;
+    text-align: center;
+    color: #38470B;
+}
+.month table .normal, .month table th{
+    padding: 8px 5px;
+    box-sizing: border-box;
+    position: relative;
+    width: calc(100% / 7);
+    cursor: pointer;
+}
+.month .normal.before, .month .normal.after{
+    opacity: .3;
+    position: relative;
+    cursor: not-allowed;
+}
+.month .before::after{
+    content: '';
+    display: inline-block;
+    border: 1px solid #38470B;
+    width: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.month .normal.clickActiveFirst,
+.month .normal.clickActiveSmall,
+.month .normal.clickActiveBig,
+.month .normal.clickActive{
+    color: #fff;
+    background-color: #38470B;
+    opacity: .8;
+}
+.month .normal.clickActiveFirst{
+    border-radius: 50%;
+}
+.month .normal.clickActiveSmall{
+    border-radius: 50% 0 0 50%;
+}
+.month .normal.clickActiveBig{
+    border-radius: 0 50% 50% 0;
+}
+.prevBtn, .nextBtn{
+    border: none;
+    background-color: unset;
+    outline: unset;
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+.prevBtn.close, .nextBtn.close{
+    display: none;
+}
+.nextBtn img{
+    transform: rotate(180deg);
+}
+.prevBtn{
+    left: -30px;
+}
+.nextBtn{
+    right: -30px;
+}
+@media screen and (min-width: 768px){
+    .month{
+        width: 50%;
+        border: 1px solid #38470B;
+        display: none;
+    }
+    .month.active{
+        display: inline-block;
+    }
+    .month.active + .month.active{
+        border-left: 0px;
+    }
+}

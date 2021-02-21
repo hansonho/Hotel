@@ -1,0 +1,47 @@
+.item{
+    width: 33.333333%;
+    padding: 0px 10px;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    position: relative;
+}
+.item.noService{
+    opacity: .2;
+}
+.item + .item{
+    margin-top: 15px;
+}
+.item span{
+    display: block;
+    padding-top: 10px;
+}
+.item .service{
+    height: 35px;
+    width: 35px;
+}
+.item .tick, .item .cross{
+    position: absolute;
+    top: 0;
+    left: 75%;
+}
+@media screen and (min-width: 768px){
+    .item{
+        width: 25%;
+        padding: 10px 25px;
+        box-sizing: border-box;
+    }
+    .item .tick, .item .cross{
+        left: 70%;
+    }
+}
+@media screen and (min-width: 1200px){
+    .item{
+        width: 20%;
+        padding: 10px 25px;
+        box-sizing: border-box;
+    }
+    .item .tick, .item .cross{
+        left: 65%;
+    }
+}

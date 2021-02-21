@@ -1,0 +1,326 @@
+.booking{
+    display: none;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    font-family: Noto Sans CJK TC;
+    overflow: scroll;
+}
+.booking.active{
+    display: block;
+}
+.bookingForm{
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+    margin: 20px auto;
+    box-sizing: border-box;
+    border: 1px solid #38470B;
+    position: relative;
+}
+.bookingForm .close{
+    width: 30px;
+    height: 30px;
+    top: 5px;
+    right: 10px;
+    position: absolute;
+    background-color: transparent;
+    outline: unset;
+    border: unset;
+    padding: 0;
+    cursor: pointer;
+}
+.bookingForm .close::before, 
+.bookingForm .close::after{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+}
+.bookingForm .close::before{
+    transform: rotate(45deg);
+}
+.bookingForm .close::after{
+    transform: rotate(315deg);
+}
+
+.bookerInfo{
+    width: 100%;
+    background-color: #38470B;
+    color: #fff;
+    padding: 10px 10px;
+    box-sizing: border-box;
+}
+.bookerInfo .item{
+    padding: 5px 10px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.bookerInfo .item + .item{
+    margin-top: 15px;
+}
+.bookerInfo .item span{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.bookerInfo .item input{
+    width: 100%;
+    padding: 8px 10px;
+    box-sizing: border-box;
+}
+.bookerInfo .item .calendar{
+    width: 100%;
+    text-align: center;
+    background-color:  #bfd47d;
+    border-radius: 5px;
+    height: 0;
+    overflow: hidden;
+}
+.bookerInfo .item .calendar .header{
+    position: relative;
+    margin-top: 5px;
+}
+.bookerInfo .item .calendar .header.active{
+    display: block;
+}
+.bookerInfo .item .calendar table.active{
+    display: table;
+}
+.bookerInfo .item .calendar .header p{
+    font-size: 18px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #38470B;
+    margin: 0px;
+}
+.bookerInfo .item .calendar .header img{
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+}
+.bookerInfo .item .calendar .header .back{
+    left: 20px;
+    transform: translate(-50%, -50%);
+}
+.bookerInfo .item .calendar .header .front{
+    transform: translate(-50%, -50%) rotate(180deg);
+    right: 20px;
+}
+.bookerInfo .item .calendar table{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 0 0 5px 5px;
+}
+.bookerInfo .item .calendar table th{
+    border-bottom: 1px solid #38470B;
+}
+.bookerInfo .item .calendar table td[data-type="before"],
+.bookerInfo .item .calendar table td[data-type="after"],
+.bookerInfo .item .calendar table td[data-over="over"]{
+    cursor: not-allowed;
+    opacity: .5;
+}
+.bookerInfo .item .calendar table th,
+.bookerInfo .item .calendar table td{
+    padding: 10px 10px;
+    box-sizing: border-box;
+    color: #38470B;
+}
+.bookerInfo .item .calendar table td{
+    cursor: pointer;
+}
+.bookerInfo .item .calendar table .dateChoose{
+    border-radius: 50%;
+    background-color: #38470B;
+    color: #fff;
+}
+.dayCount{
+    color: #949C7C;
+    border-bottom: 1px solid #949C7C;
+}
+.money{
+    text-align: right;
+    font-weight: 500;
+}
+.money span:last-of-type{
+    font-size: 22px;
+}
+.bookerInfo .item button{
+    width: 100%;
+    border: 1px solid #fff;
+    background-color: transparent;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 18px;
+    outline: unset;
+    cursor: pointer;
+}
+.bookerInfo p{
+    margin: 20px 0;
+    text-align: center;
+    font-size: 12px;
+}
+.bookRoomInfo{
+    width: 100%;
+    color: #38470B;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+.bookRoomInfo .title{
+    display: flex;
+    font-size: 18px;
+    font-weight: bolder;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.bookRoomInfo .title::after{
+    content: '';
+    display: inline-block;
+    height: 1px;
+    background-color: rgba(148,156,124,.4);
+    flex-grow: 1;
+}
+.bookRoomInfo .title span{
+    display: inline-block;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.bookRoomInfo .roomDetail .title span{
+    font-size: 20px;
+}
+.bookRoomInfo .item + .item{
+    margin-top: 15px;
+}
+.roomType, .roomInfo, .process{
+    font-weight: 700;
+    font-size: 24px;
+}
+.roomType .title{
+    font-size: 20px;
+}
+.roomDetail{
+    font-size: 14px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+.roomDetail span + span{
+    display: block;
+    margin-top: 10px;
+}
+.roomService .iconItem{
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+.roomService .iconItem img{
+    width: 40px;
+    height: 40px;
+}
+.roomInfo{
+    font-size: 12px;
+}
+.roomInfo ul{
+    list-style: square;
+    font-size: 14px;
+}
+.roomInfo ul li{
+    margin-left: 15px;
+    line-height: 1.2;
+}
+.roomInfo ul li + li {
+    margin-top: 10px;
+}
+.process .steps{
+    width: 60%;
+    font-size: 14px;
+    text-align: center;
+    margin: auto;
+    border: 1px solid #949C7C;
+    border-radius: 10px;
+    position: relative;
+}
+.process .steps + .steps{
+    margin-top: 25px;
+}
+.process .head{
+    background-color: #949C7C;
+    border-radius: 10px 10px 0 0;
+    padding: 10px 0;
+    box-sizing: border-box;
+}
+.process .content{
+    height: 75px;
+    padding: 10px 10px 10px;
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+.process .steps:first-child{
+    color: red;
+}
+.process .steps:nth-child(2) .content::after{
+    content: '';
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+.process .steps:nth-child(2) .arrow,
+.process .steps:nth-child(3) .arrow{
+    position: absolute;
+    transform: rotate(270deg);
+    bottom: -20px;
+}
+.inputData.error{
+    border-color: #f00;
+    outline: none;
+}
+.error{
+    display: inline-block;
+    margin-top: 5px;
+    color: #f00;
+}
+@media screen and (min-width: 769px){
+    .bookingForm{
+        flex-direction: row;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .bookerInfo{
+        width: 60%;
+        padding: 25px;
+    }
+    .bookRoomInfo{
+        padding: 25px;
+    }
+    .process .steps{
+        display: inline-block;
+        width: 30%;
+        position: relative;
+        box-sizing: border-box;
+        vertical-align: bottom;
+    }
+    .process .steps + .steps{
+        margin: 0;
+        margin-left: 5%;
+    }
+    .process .steps:nth-child(2) .arrow,
+    .process .steps:nth-child(3) .arrow{
+        top: 50%;
+        right: -12%;
+        transform: translateY(-50%) rotate(180deg);
+    }
+}
